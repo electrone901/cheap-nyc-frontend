@@ -1,0 +1,28 @@
+/******************************************************************************
+Title           : main.scss
+Description     : The main file contains all scss files and it will be overwrite the App.scss file after running: npm run compile
+******************************************************************************/
+
+// normalizing reset
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+// VARIABLES
+@import "./abstracts/variables";
+// @import "abstracts/functions";
+// @import "abstracts/mixins";
+
+// COMPONENTS
+@import "./components/footer";
+@import "./components/nav";
+
+// UTILITIES
+// // import _base.scss
+// @import "base/typography"
+// @import "base/utilities";
+
+
+// GRIDS
+// @import "layout/grid";

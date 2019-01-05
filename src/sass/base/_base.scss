@@ -1,0 +1,29 @@
+/******************************************************************************
+Title           : base.scss
+Description     : A file that contains all scss base 'like box-sizing, font-size'.
+******************************************************************************/
+
+/* applies normalize/simple universal reset css I inheritance to all elements especified to make every browser to look the same, universal selector to apply to every element */
+*,
+*::after, 
+*::before {
+    margin: 0; 
+    padding: 0;
+    box-sizing: inherit; /*inherited from body*/
+}
+/* root font-size 
+    we use the rem technique to be responsive in every single element but rem is not available in iexplorer less than 9
+*/ 
+html {
+    /* we changed to 10 instead of 16 for simplicity so we can just dive pixNumb/10 and change all px to rem (1 rem = 10px) 
+    but we need to convert it to % the browser default 16px = 100% therefore 
+    16/10 = .625 so our % should be = 62.5% to allow the user to zoom in automatically
+    */
+    /* font-size: 10px;  */
+    font-size: 62.5%; 
+}
+
+/* inheritance to every element within body */
+body {
+    box-sizing: border-box; /*takes away boarding & padding*/
+}

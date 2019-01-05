@@ -1,32 +1,72 @@
-.App {
+/******************************************************************************
+Title           : main.scss
+Description     : The main file contains all scss files and it will be overwrite the App.scss file after running: npm run compile
+******************************************************************************/
+* {
+  margin: 0;
+  padding: 0; }
+
+/******************************************************************************
+Title           : _variables.scss
+Description     : A file that contains all scss variables.
+******************************************************************************/
+/******************************************************************************
+Title           : utilities.scss
+Description     : A file that contains all styles for Footer.js.
+******************************************************************************/
+.footer {
+  background-color: #ef6230;
+  font-size: larger;
   text-align: center;
-}
+  color: #eee; }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
+/******************************************************************************
+Title           : _nav.scss
+Description     : A file that contains all styles for Navbar.js
+******************************************************************************/
+nav {
+  background-color: #ef6230;
+  margin-bottom: 1px; }
+  nav::after {
+    content: "";
+    clear: both;
+    display: table; }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+.navigation {
+  list-style: none;
+  float: left; }
+  .navigation li {
+    margin-left: 30px;
+    display: inline-block; }
+    .navigation li:first-child {
+      margin: 0; }
+    .navigation li a {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #eee; }
 
-.App-link {
-  color: #61dafb;
-}
+.buttons {
+  float: right; }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+.btn-main,
+.btn-hot {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #eee;
+  width: 150px;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 100px;
+  text-align: center; }
+
+.btn-main:link {
+  background-color: #eecc09; }
+
+.btn-main:hover {
+  background-color: #a48d06; }
+
+.btn-hot:link {
+  background-color: #6cda2d; }
+
+.btn-hot:hover {
+  background-color: #4c9f1c; }
