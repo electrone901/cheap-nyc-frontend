@@ -35,7 +35,6 @@ export default class Slider extends Component {
 
 
     goToPrevSlide = () => {
-        console.log('goToPrevSlide')
         if(this.state.currentIndex === 0) 
             return;
         
@@ -48,7 +47,6 @@ export default class Slider extends Component {
     goToNextSlide = () => {
         // Exiting the method early if we are at the end
         // We also want to reset currentIndex & translateValue so we return the first image
-        console.log('next')
         if(this.state.currentIndex === this.state.images.length-1) {
             return this.setState({
                 currentIndex: 0,
