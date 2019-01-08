@@ -9,6 +9,7 @@ import './sass/main.scss';
 
 import Footer from './components/layout/Footer';
 import Navbar from './components/layout/Navbar';
+import Slider from './components/carousel/Slider';
 
 
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
+        <Slider />
         <Footer />
       </div>
     );
