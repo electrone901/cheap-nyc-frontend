@@ -3,6 +3,7 @@ Title           : Navbar.js
 Description     : Navbar react component 
 ******************************************************************************/
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import '../../sass/main.scss';
 
@@ -11,12 +12,13 @@ class Navbar extends Component {
        return (
            <nav>
                <ul className="navigation">
-                    <li><a href="#">Donate</a></li>
-                    <li><a href="#">How it works</a></li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/donate">Donate</Link></li>
+                    <li><Link to="/how-it-works">How it works</Link></li>
                 </ul>
                 <div className="buttons">
-                    <a className="btn-main" href="#">Login</a>
-                    <a className="btn-hot" href="#">Sign up</a>
+                    <Link to="/login" className="btn-main">Login</Link>
+                    <Link to="/signup" className="btn-hot">Sign up</Link>
                 </div>
            </nav>
        ); 

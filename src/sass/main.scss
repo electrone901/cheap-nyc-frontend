@@ -12,12 +12,14 @@ Description     : The main file contains all scss files and it will be overwrite
 // VARIABLES
 @import "./abstracts/variables";
 // @import "abstracts/functions";
-// @import "abstracts/mixins";
+@import "abstracts/mixins";
 
 // COMPONENTS
 @import "./components/footer";
 @import "./components/nav";
 @import "./components/carousel";
+@import "./components/prices";
+@import "./components/ItemsListPrice";
 
 // UTILITIES
 // // import _base.scss
@@ -26,4 +28,4 @@ Description     : The main file contains all scss files and it will be overwrite
 
 
 // GRIDS
-// @import "layout/grid";
+@import "layout/grid";

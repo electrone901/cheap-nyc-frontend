@@ -1,3 +1,8 @@
+/******************************************************************************
+Title           : Slider.js
+Description     : React component that contains all components for the carousel
+******************************************************************************/
+
 import React, { Component } from 'react';
 import classnames from 'classnames';
 
@@ -15,6 +20,18 @@ class Signup extends Component {
 
     componentDidMount() {
         // if(authenticated) PushSubscription(/portfolio)
+        fetch('https://cheapnycserver.herokuapp.com/foods', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    })
+    .then(res => {
+        return res.json();
+    })
+    .then(resData => {
+        console.log(resData.foods);
+      })
     }
 
     componentWillReceiveProps(nextProps) {
@@ -34,6 +51,32 @@ class Signup extends Component {
             password: this.state.password,
             password2: this.state.password2
         }
+        fetch('https://cheapnycserver.herokuapp.com/users/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: this.state.name,
+                email: this.state.email,
+                password: this.state.password,
+                password2: this.state.password2
+            })
+        })
+      .then(res => {
+        if (res.status === 422) {
+          throw new Error('Validation failed.');
+        }
+        if (res.status !== 200 && res.status !== 201) {
+          console.log('Error!');
+          throw new Error('Could not authenticate you!');
+        }
+        return res.json();
+      })
+      .then(resData => {
+        console.log(resData);
+      })
+      .catch(err => console.log(err));
         console.log('newUSer',newUSer)
         // send it post
         // this.props.registerUser(newUser, this.props.history);
