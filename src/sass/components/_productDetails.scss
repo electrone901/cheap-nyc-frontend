@@ -1,0 +1,139 @@
+/******************************************************************************
+Title           : _productDetails.scss
+Description     : A file that contains all styles for ProductDetails.js
+******************************************************************************/
+
+.details {
+    // flex container expands items to fill available free space/shrinks them to prevent overflow
+    display: flex;
+
+    
+    &__item-1{
+        // HOW MUCH SHRINK=0, GROW=0 , SPACE_TO_TAKE=75
+        flex: 0 0 75%;
+        padding: 20px 20px 20px 50px;
+        justify-content: center;
+        text-align: center;
+        
+        &__img {
+            width: 70%;
+            height: auto;       
+        }
+
+    }
+
+    &__title {
+        font-size: 2em;
+    }
+
+    &__price {
+        font-weight: 200;
+    }
+
+    &__info {
+        text-align: start;
+    }
+
+    // RATINGS
+    &__rating {
+        align-items: center;
+        font-size: 3em;
+        display: flex;
+        padding: 10px 0px 10px 50px;
+        justify-content: center;
+
+        &__back {
+            display: flex;
+            color: #ff004e;
+            position: relative;
+            text-shadow: 4px 4px 10px #843a3a;
+        }
+
+        &__front {
+            color: #FFBC0B;
+            overflow: hidden;
+            position: absolute;
+            text-shadow: 2px 2px 5px #d29b09;
+            top: 0;
+            display: flex;
+        }
+    }
+
+    &__directions {
+        color: #074bf1;
+        text-transform: uppercase;
+        width: 150px;
+        padding: 20px;
+        text-align: center;
+        font-weight: 700;
+        font-size: 1.2em;
+    }
+
+
+    // ADVERTISMENTS
+    &__item-2 {
+        background-color: rgb(238, 236, 236);
+        flex: 0 0 20%;
+
+        &__img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    &__item {
+        background-color: aqua;
+        padding: 10px 15px 10px 15px;
+    }
+}
+
+.flex-container-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+// CENTER DIV IMG
+.flex-img {
+    text-align: center;
+}
+
+.btn-info {
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: #05aaf7c7;
+    width: 150px;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 100px;
+    text-align: center;
+    margin-left: 225px;
+    font-weight: 700;
+    color: white;
+}
+
+.reviewers {
+    flex: 0 0 50%;
+    display: block;
+    padding-top: 20px;
+
+    &__review {
+        background-color:whitesmoke;
+        width: 96%;
+    }
+
+    &__img {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+    }
+}

@@ -9,3 +9,39 @@ Description     : A file that contains all styles for Footer.js.
     text-align: center;
     color: $color-text-light;
 }
+
+.quick-links {
+    & li {
+        list-style: none;
+
+        & a {
+            color: white;
+            text-decoration: none;
+            font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.42857143;
+        }
+    }
+
+}
+
+.social-section {
+    margin-top: -94px; 
+    padding-bottom: 10px;
+}
+
+.social {
+    display: inline-flex;
+    flex-direction: row;
+    list-style: none;
+    & i {
+        color: white;
+       
+        
+    }
+    
+}
+.fa{
+    margin-right: 10px;
+}

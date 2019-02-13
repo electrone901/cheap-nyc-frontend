@@ -20,6 +20,7 @@ Description     : The main file contains all scss files and it will be overwrite
 @import "./components/carousel";
 @import "./components/prices";
 @import "./components/ItemsListPrice";
+@import "./components/productDetails.scss";
 
 // UTILITIES
 // // import _base.scss
@@ -29,3 +30,7 @@ Description     : The main file contains all scss files and it will be overwrite
 
 // GRIDS
 @import "layout/grid";
+
+// FONT AWESOME
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";

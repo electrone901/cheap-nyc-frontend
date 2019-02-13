@@ -6,6 +6,7 @@ import React, { Component } from 'react';
 import Slide from './Slide';
 import RightArrow from './RightArrow';
 import LeftArrow from './LeftArrow';
+import TextSlider from './TextSlider';
 import '../../sass/main.scss';
 
 export default class Slider extends Component {
@@ -79,11 +80,35 @@ export default class Slider extends Component {
                         this.state.images.map((image, i) => (
                             <Slide key={i} image={image} />
                         ))
-                    }    
+                    }   
                 </div>
                 <LeftArrow goToPrevSlide={this.goToPrevSlide} />
+                < TextSlider />
                 <RightArrow goToNextSlide={this.goToNextSlide} />
             </div>
         )
     }
 }
+
+
+// const SlideText = () => {
+//     return (
+//       <div className="tParent">
+//         <div className="tParent__items">
+//             <h1 className="">
+//                 <span>What do you love?</span>
+//             </h1>
+//         </div>
+//         <div className="tParent__items">
+//             <p className="">
+//                 <span>Do more of it with Meetup</span>
+//             </p>
+//         </div>
+//         <div className="tParent__items">
+//             <a href="https://www.meetup.com/register/" className="button--primary text--bold">
+//                 <span>Sign Up</span>
+//             </a>
+//         </div>
+//     </div>
+//     )
+//   }

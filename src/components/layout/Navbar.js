@@ -4,6 +4,7 @@ Description     : Navbar react component
 ******************************************************************************/
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import image from '../../images/logo.png';
 
 import '../../sass/main.scss';
 
@@ -12,7 +13,10 @@ class Navbar extends Component {
        return (
            <nav>
                <ul className="navigation">
-                    <li><Link to="/">Home</Link></li>
+                    <Link to="/">
+                    <img className="navbar-brand" src={image} alt="image"/>
+                    </Link>
+                    <li ><Link to="/">Home</Link></li>
                     <li><Link to="/donate">Donate</Link></li>
                     <li><Link to="/how-it-works">How it works</Link></li>
                 </ul>
