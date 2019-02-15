@@ -14,7 +14,7 @@ class Navbar extends Component {
            <nav>
                <ul className="navigation">
                     <Link to="/">
-                    <img className="navbar-brand" src={image} alt="image"/>
+                    <img className="navbar-brand" src={image} alt="logo"/>
                     </Link>
                     <li ><Link to="/">Home</Link></li>
                     <li><Link to="/donate">Donate</Link></li>

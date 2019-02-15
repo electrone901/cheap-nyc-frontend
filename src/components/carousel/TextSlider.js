@@ -4,6 +4,7 @@ Description     : is the left arrow of our carousel  using font-awesome
 ******************************************************************************/
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../../sass/main.scss';
 
 // functional component
@@ -14,14 +15,12 @@ const TextSlider = () => {
                 <h1 className="">What do you love?</h1>
             </div>
             <div className="tParent__items">
-                <p className="">
-                    <span>Do more of it with Cheap NY</span>
+                <p className="tParent__items__subTittle">
+                    Do more of it with Cheap NY
                 </p>
             </div>
             <div className="tParent__items">
-                <a href="https://www.meetup.com/register/" className="button-sign text--bold">
-                    <span>Sign Up</span>
-                </a>
+                <Link to="/signup" className="tParent__items__sign">Sign Up</Link>
             </div>
         </div>
     )

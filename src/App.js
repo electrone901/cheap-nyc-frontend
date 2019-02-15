@@ -11,10 +11,8 @@ import './sass/main.scss';
 import Footer from './components/layout/Footer';
 import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
-import Slider from './components/carousel/Slider';
 import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
-import Prices from './components/prices/Prices';
 import ItemsListPrice from './components/prices/ItemsListPrice';
 import CreatePost from './components/prices/CreatePost';
 import ProductDetails from './components/prices/ProductDetails';
@@ -30,21 +28,17 @@ class App extends Component {
         <Router>
           <div className="App">
             <Navbar />
-            
             <Route exact path="/" component={Landing} />
             <Route exact path="/createPost" component={CreatePost} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
-            <Route exact path="/itemsListPrice" component={ItemsListPrice} />
+            <Route exact path="/itemsListPrice/:range" component={ItemsListPrice} />
             <Route exact path="/productDetails" component={ProductDetails} />
-          
             <Footer />
           </div>
         </Router>
-
       </Provider>
     );
   }
 }
-
 export default App;

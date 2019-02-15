@@ -5,7 +5,7 @@ Description     : React component for login form
 
 import React, { Component } from 'react';
 //come back to add redux
-const token = localStorage.getItem('token');
+// const token = localStorage.getItem('token');
 
 class Login extends Component {
     constructor() {
@@ -31,10 +31,10 @@ class Login extends Component {
     onSubmit = (e) => {
         e.preventDefault();
         
-        const userData  = {
-            email: this.state.email,
-            password: this.state.password
-        };
+        // const userData  = {
+        //     email: this.state.email,
+        //     password: this.state.password
+        // };
 
         fetch('https://cheapnycserver.herokuapp.com/users/login', {
             method: 'POST',

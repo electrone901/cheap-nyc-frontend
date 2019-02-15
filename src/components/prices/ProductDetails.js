@@ -49,7 +49,7 @@ class ProductDetails extends Component {
                     <div className="flex-container">
                         <div className="flex-img">
                             <Link to="/productDetails">
-                                <img src={image2} alt="image" className="details__item-1__img"/>
+                                <img src={image2} alt="details" className="details__item-1__img"/>
                             </Link>
                         </div>
                     </div>
@@ -109,7 +109,7 @@ class ProductDetails extends Component {
                                 <div className="reviewers__review">
                                     <div className="content__item-1">
                                         <Link to="/productDetails">
-                                            <img src={image2} alt="image" className="reviewers__img"/>
+                                            <img src={image2} alt="details" className="reviewers__img"/>
                                         </Link>
                                     </div>
 
@@ -145,7 +145,7 @@ class ProductDetails extends Component {
                                 <div className="reviewers__review">
                                     <div className="content__item-1">
                                         <Link to="/productDetails">
-                                            <img src={image2} alt="image" className="reviewers__img"/>
+                                            <img src={image2} alt="details" className="reviewers__img"/>
                                         </Link>
                                     </div>
 
@@ -191,19 +191,19 @@ class ProductDetails extends Component {
                     <div className="container">
                         <div>
                             <Link to="/productDetails">
-                                <img src={ad} alt="image" className="details__item-2__img"/>
+                                <img src={ad} alt="details" className="details__item-2__img"/>
                             </Link>
                         </div>
 
                         <div>
                             <Link to="/productDetails">
-                                <img src={ad} alt="image" className="details__item-2__img"/>
+                                <img src={ad} alt="details" className="details__item-2__img"/>
                             </Link>
                         </div>
 
                         <div>
                             <Link to="/productDetails">
-                                <img src={ad} alt="image" className="details__item-2__img"/>
+                                <img src={ad} alt="details" className="details__item-2__img"/>
                             </Link>
                         </div>
                     </div>

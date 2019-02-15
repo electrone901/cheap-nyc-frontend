@@ -8,8 +8,8 @@ import image2 from '../../images/1.jpg';
 import ad from '../../images/ads.jpg';
 import { Link } from 'react-router-dom';
 
-class ItemsListPrice extends Component {
-    
+
+class ItemsListPrice extends Component {    
     constructor() {
         super();
         this.state = {
@@ -64,9 +64,21 @@ class ItemsListPrice extends Component {
         }
     }
 
-    // componentDidMount() {
+    componentDidMount() {
+        let range = this.props.match.params.range;
+        let url = "https://cheapnycserver.herokuapp.com/foods?";
+        fetch(url + range)
+        .then(res => {
+            return res.json();
+        })
+        .then((data) => {
+            this.setState({data: data.foods});
+        })
+        .catch((err) => {
+            console.log('There was a problem with your fetch request' + err.message)
+        });
+    }
 
-    // }
     onChange = (e) => {
         console.log('val', e.target.value)
         this.setState({value: e.target.value})
@@ -74,11 +86,52 @@ class ItemsListPrice extends Component {
     }
 
     render() {
-        console.log('prices', this.state.prices)
-        return (
-                
-                <section className="container">
+        const { data } = this.state;
+        let list = <div>
+                {
+                    this.state.data ? this.state.data.map((item, key) => {
+                        return (
+                            <div className="content" key={key}> 
 
+                                <div className="content__item-1">
+                                    <Link to="/productDetails">
+                                        <img src={image2} alt="item details" className="content__item-1__img"/>
+                                    </Link>
+                                </div>
+
+                                <div className="content__item-2">
+                                    <h1>{item.name}  <span className="content__item-2__price"> $ {item.price}</span></h1>
+                                    <div className="content__item-2__rating">
+                                        <div className="content__item-2__rating__back">
+                                            <i className="fa fa-star" aria-hidden="true"></i>
+                                            <i className="fa fa-star" aria-hidden="true"></i>
+                                            <i className="fa fa-star" aria-hidden="true"></i>
+                                            <i className="fa fa-star" aria-hidden="true"></i>
+                                            <i className="fa fa-star" aria-hidden="true"></i>
+                                            
+                                            <div className="content__item-2__rating__front" style={{width: "70%" }}>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                    </div> 
+
+                                    <h1>Location:  <span className="price"> {item.location}</span></h1>
+                                    <Link to="/productDetails" className="btn-hot">Details</Link>
+                                </div>
+                            </div>
+                        )
+                    }): console.log('wait')
+                }
+            </div>
+
+        let waiting = <h1>waiting ...</h1>
+        
+        return (
+                <section className="container">
                     <div>
                         <h1>New York, NYC </h1>
                         <div >
@@ -96,7 +149,8 @@ class ItemsListPrice extends Component {
 
                                 </div>
                                 <div className="form__item-2">
-                                    Category<select id="lang" onChange={this.change} value={this.state.value} className="form__drop">
+                                    {/* Category<select id="lang" onChange={this.change} value={this.state.value} className="form__drop"> */}
+                                    Category<select id="lang"  className="form__drop">
                                         <option value="select">Select One</option>
                                         <option value="Food">Food</option>
                                         <option value="Sports">Sports</option>
@@ -118,74 +172,34 @@ class ItemsListPrice extends Component {
                         </div>
                     </div>
 
-
                     <div className="content">
                         <div>
                             {
-                                this.state.items.map((item, key) => {
-                                    return (
-                                        <div className="content" key={key}> 
-
-                                            <div className="content__item-1">
-                                                <Link to="/productDetails">
-                                                    <img src={image2} alt="image" className="content__item-1__img"/>
-                                                </Link>
-                                            </div>
-
-
-                                            <div className="content__item-2">
-                                                <h1>{item.productName}  <span className="content__item-2__price"> $ 0.00</span></h1>
-                                                <div className="content__item-2__rating">
-                                                    <div className="content__item-2__rating__back">
-                                                        <i className="fa fa-star" aria-hidden="true"></i>
-                                                        <i className="fa fa-star" aria-hidden="true"></i>
-                                                        <i className="fa fa-star" aria-hidden="true"></i>
-                                                        <i className="fa fa-star" aria-hidden="true"></i>
-                                                        <i className="fa fa-star" aria-hidden="true"></i>
-                                                        
-                                                        <div className="content__item-2__rating__front" style={{width: "70%" }}>
-                                                            <i className="fa fa-star" aria-hidden="true"></i>
-                                                            <i className="fa fa-star" aria-hidden="true"></i>
-                                                            <i className="fa fa-star" aria-hidden="true"></i>
-                                                            <i className="fa fa-star" aria-hidden="true"></i>
-                                                            <i className="fa fa-star" aria-hidden="true"></i>
-                                                        </div>
-                                                    </div>
-                                                </div> 
-
-                                                <h1>Company:  <span className="price"> {item.placeName}</span></h1>
-                                                <Link to="/productDetails" className="btn-hot">Details</Link>
-                                            </div>
-                                        </div>
-                                    )
-                                })
+                                this.state.data ? list: waiting
                             }
                         </div>
 
+                        <div className="content__item-3">
+                            <div className="container">
+                                <div>
+                                    <Link to="/productDetails">
+                                        <img src={ad} alt="details" className="content__item-3__img"/>
+                                    </Link>
+                                </div>
 
+                                <div>
+                                    <Link to="/productDetails">
+                                        <img src={ad} alt="details" className="content__item-3__img"/>
+                                    </Link>
+                                </div>
 
-
-                            <div className="content__item-3">
-                                <div className="container">
-                                    <div>
-                                        <Link to="/productDetails">
-                                            <img src={ad} alt="image" className="content__item-3__img"/>
-                                        </Link>
-                                    </div>
-
-                                    <div>
-                                        <Link to="/productDetails">
-                                            <img src={ad} alt="image" className="content__item-3__img"/>
-                                        </Link>
-                                    </div>
-
-                                    <div>
-                                        <Link to="/productDetails">
-                                            <img src={ad} alt="image" className="content__item-3__img"/>
-                                        </Link>
-                                    </div>
+                                <div>
+                                    <Link to="/productDetails">
+                                        <img src={ad} alt="details" className="content__item-3__img"/>
+                                    </Link>
                                 </div>
                             </div>
+                        </div>
                     </div>
                 </section>
 

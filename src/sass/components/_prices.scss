@@ -3,42 +3,6 @@ Title           : Prices.scss
 Description     : CSS file that styles prices.js 
 ******************************************************************************/
 
-.tParent {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 50%;
-    left: 40%;
-    right: 40%;
-    color: #fff;
-    text-align: center;
-
-    &__items {
-        left: 50%;
-        right: 50%;
-        text-align: center;
-        font-size: 1.5em;
-        align-content: center;
-    }
-}
-.button-sign {
-    background: #f13a59;
-    color: #fff;
-    align-items: center;
-    border-radius: 4px;
-    box-sizing: border-box;
-    display: inline-flex;
-    font-size: 14px;
-    line-height: 1.6;
-    padding: 8px 32px;
-    transition: background .15s;
-}
-.text--bold {
-
-}
-
-
-
 .price-container {
     padding: 55px 30px;
 }

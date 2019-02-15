@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
 
 import Slider from '../carousel/Slider';
 import Prices from '../prices/Prices';
