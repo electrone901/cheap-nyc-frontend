@@ -120,7 +120,7 @@ class ItemsListPrice extends Component {
                                     </div> 
 
                                     <h1>Location:  <span className="price"> {item.location}</span></h1>
-                                    <Link to="/productDetails" className="btn-hot">Details</Link>
+                                    <Link to={`/productDetails/${item}`} className="btn-hot">Details</Link>
                                 </div>
                             </div>
                         )
@@ -128,7 +128,7 @@ class ItemsListPrice extends Component {
                 }
             </div>
 
-        let waiting = <h1>waiting ...</h1>
+        let waiting = <h1 className="waiting">Waiting ...</h1>
         
         return (
                 <section className="container">

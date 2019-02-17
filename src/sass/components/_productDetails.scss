@@ -12,8 +12,8 @@ Description     : A file that contains all styles for ProductDetails.js
         // HOW MUCH SHRINK=0, GROW=0 , SPACE_TO_TAKE=75
         flex: 0 0 75%;
         padding: 20px 20px 20px 50px;
-        justify-content: center;
-        text-align: center;
+        // justify-content: center;
+        // text-align: center;
         
         &__img {
             width: 70%;
@@ -83,7 +83,7 @@ Description     : A file that contains all styles for ProductDetails.js
 }
 
 
-.flex-container {
+.flex-container-img {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -95,10 +95,17 @@ Description     : A file that contains all styles for ProductDetails.js
     }
 }
 
+.flex-container {
+    display: flex;
+    // align-items: center;
+    flex-wrap: wrap;
+    padding: 20px 0px;
+}
+
 .flex-container-2 {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 
@@ -116,7 +123,7 @@ Description     : A file that contains all styles for ProductDetails.js
     padding: 10px;
     border-radius: 100px;
     text-align: center;
-    margin-left: 225px;
+    // margin-left: 225px;
     font-weight: 700;
     color: white;
 }
@@ -136,4 +143,115 @@ Description     : A file that contains all styles for ProductDetails.js
         width: 150px;
         height: 150px;
     }
+}
+
+.btn-info-like {
+    text-transform: uppercase;
+    padding: 5px 24px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+    background-color: #337ab7;
+    color: white;
+    font-weight: 800;
+}
+
+.bottom-padding {
+    padding-bottom: 40px;
+}
+
+
+// new review from udemy
+.date {
+    flex: 0 0 auto;
+    min-width: 1px;
+    color: #686F7A;
+    font-size: 15px;
+    margin-left: 15px;
+}
+.authorReview {
+    flex: 0 0 auto;
+    min-width: 1px;
+    color: #29303B;
+    font-size: 15px;
+    font-size: 15px;
+    margin-left: 15px;
+}
+
+.review-1 {
+    flex: 0 0 35%;
+    justify-content: center;
+}
+.review-2 {
+    flex: 0 0 65%;
+}
+.comment {
+    padding-right: 115px;
+    padding-left: 20px;
+    font-size: 15px;
+    word-break: break-word;
+}
+
+.authorRating {
+    font-size: 2em;
+    display: flex;
+    padding-left: 20px;
+
+    &__back {
+        display: flex;
+        color: #ff004e;
+        position: relative;
+        text-shadow: 4px 4px 10px #843a3a;
+    }
+
+    &__front {
+        color: #FFBC0B;
+        overflow: hidden;
+        position: absolute;
+        text-shadow: 2px 2px 5px #d29b09;
+        top: 0;
+        display: flex;
+    }
+}
+
+.helpful {
+    padding-top: 20px;
+    padding-left: 6px;
+    line-height: 2;
+}
+
+.btn-info-helpful {
+    text-transform: uppercase;
+    padding: 5px 24px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+    background-color: #e2e7eb;
+    color: #686F7A;
+    font-weight: 800;
+    border: 1px solid #CACBCC;
+}
+
+.hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-width: 1px;
+    width: 80%;
+    border-color: rgb(225, 246, 215);
+}
+
+.btn-info-moreReviews {
+    display: inline-block; 
+    font-weight: 600;
+    text-align: center;
+    padding: 11px 12px;
+    font-size: 15px;
+    line-height: 1.35135;
+    border-radius: 2px;
+    color: #007791;
+    background-color: #FFF;
+    border: 1px solid #007791;
+    margin: 30px 0px;
 }

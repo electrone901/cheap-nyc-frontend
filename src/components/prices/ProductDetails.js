@@ -37,7 +37,7 @@ class ProductDetails extends Component {
 
 
   render() {
-      console.log('state', this.state.data)
+      console.log('params', this.props.match.params)
     return (
         <section className="container">
             
@@ -46,7 +46,7 @@ class ProductDetails extends Component {
 
                 <div className="details__item-1">
 
-                    <div className="flex-container">
+                    <div className="flex-container-img">
                         <div className="flex-img">
                             <Link to="/productDetails">
                                 <img src={image2} alt="details" className="details__item-1__img"/>
@@ -56,7 +56,7 @@ class ProductDetails extends Component {
 
 
                     <div className="details__description">
-                        <div className="flex-container">
+                        <div className="flex-container-img">
                             <div className="details__title">
                                 {this.state.data.productName}  <span className="detail__price"> $ 0.00</span>
                             </div>
@@ -91,8 +91,26 @@ class ProductDetails extends Component {
                             <h1>Location:  <span className="details__price"> 300 Broadway Ave 34 B New York, NY 10027</span></h1><br/><br/>
                         </div>
 
-                        {/* REVIEWS TITLE */}
-                        <div className="flex-container">
+                        {/* LIKE, SHARE, DISLIKE */}
+                        <div className="flex-container-2 bottom-padding">
+                            <div>
+                                <button className="btn-info-like">{} (0) Likes</button>
+                            </div>
+                            <div>
+                                <button className="btn-info-like"><i className="fa fa-facebook-square fa"></i> Share</button>
+                                
+                            </div>
+                            <div>
+                                <button className="btn-info-like">{} (0) Flag This Post</button>
+                            </div>
+                        </div>
+                        
+                        <br/>
+                        <br/>
+                        <br/>
+
+                        {/* REVIEW TITLE */}
+                        <div className="flex-container-2">
                             <div>
                                 <h1>Reviews</h1>
                             </div>
@@ -101,82 +119,183 @@ class ProductDetails extends Component {
                                 <Link to="/productDetails" className="btn-info">+ Add Review</Link>
                             </div>
                         </div>
+                        <hr className="hr"/>
 
+
+
+                        {/* REVIEWS */}
                         
-                        {/* REVIEWERS */}
-                        <div className="flex-container">    
-                            <div className="reviewers"> 
-                                <div className="reviewers__review">
-                                    <div className="content__item-1">
-                                        <Link to="/productDetails">
-                                            <img src={image2} alt="details" className="reviewers__img"/>
-                                        </Link>
+                        <div className="flex-container">
+                            <div className="review-1 flex-container">
+                                <div className="details__title">
+                                    <img src={image2} alt="details" className="reviewers__img"/>
+                                </div>
+                                <div>
+                                    <p className="date">5 months ago</p>
+                                    <p className="authorReview">Luis Carbajal</p>
+                                </div>
+                            </div>
+
+                            
+                            <div className="review-2 flex-container">
+                                <div>
+                                    <div className="authorRating">
+                                        <div className="details__rating__back">
+                                            <i className="fa fa-star" aria-hidden="true"></i>
+                                            <i className="fa fa-star" aria-hidden="true"></i>
+                                            <i className="fa fa-star" aria-hidden="true"></i>
+                                            <i className="fa fa-star" aria-hidden="true"></i>
+                                            <i className="fa fa-star" aria-hidden="true"></i>
+                                            
+                                            <div className="details__rating__front" style={{width: "70%" }}>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                    </div> 
+
+                                    <div className="comment">
+                                        <p>Must take course for anyone who has no prior programming language experience / is a beginner in python. Very informative and comprehensive course. Easy to understand.</p>
                                     </div>
 
+                                    <div className="helpful flex-container">
+                                        <div className="date">
+                                            <p>Was this review helpful?</p>
+                                        </div>
 
-                                    <div className="content__item-1">
-                                        <h1>Luis Carbajal</h1>
-                                        <div className="details__rating">
-                                            <div className="content__item-2__rating__back">
-                                                <i className="fa fa-star" aria-hidden="true"></i>
-                                                <i className="fa fa-star" aria-hidden="true"></i>
-                                                <i className="fa fa-star" aria-hidden="true"></i>
-                                                <i className="fa fa-star" aria-hidden="true"></i>
-                                                <i className="fa fa-star" aria-hidden="true"></i>
-                                                
-                                                <div className="content__item-2__rating__front" style={{width: "70%" }}>
-                                                    <i className="fa fa-star" aria-hidden="true"></i>
-                                                    <i className="fa fa-star" aria-hidden="true"></i>
-                                                    <i className="fa fa-star" aria-hidden="true"></i>
-                                                    <i className="fa fa-star" aria-hidden="true"></i>
-                                                    <i className="fa fa-star" aria-hidden="true"></i>
-                                                </div>
-                                            </div>
-                                        </div> 
+                                        <button className="btn-info-helpful">{} (0) Yes</button>
+                                
+                                        <button className="btn-info-helpful">{} (0) No</button>
 
-                                        <h1>This places was awesome, the service excellent and the pizza even better. Wow, I couldn't belive the prices was awesome!</h1>
+                                        <div className="date">
+                                            <p>Report</p>
+                                        </div>
                                     </div>
 
                                 </div>
                             </div>
-                        
-                            {/* SECOND  REVIEWERS*/}
-                            <div className="reviewers"> 
-                                <div className="reviewers__review">
-                                    <div className="content__item-1">
-                                        <Link to="/productDetails">
-                                            <img src={image2} alt="details" className="reviewers__img"/>
-                                        </Link>
-                                    </div>
-
-
-                                    <div className="content__item-1">
-                                        <h1>Luis Carbajal</h1>
-                                        <div className="details__rating">
-                                            <div className="content__item-2__rating__back">
-                                                <i className="fa fa-star" aria-hidden="true"></i>
-                                                <i className="fa fa-star" aria-hidden="true"></i>
-                                                <i className="fa fa-star" aria-hidden="true"></i>
-                                                <i className="fa fa-star" aria-hidden="true"></i>
-                                                <i className="fa fa-star" aria-hidden="true"></i>
-                                                
-                                                <div className="content__item-2__rating__front" style={{width: "70%" }}>
-                                                    <i className="fa fa-star" aria-hidden="true"></i>
-                                                    <i className="fa fa-star" aria-hidden="true"></i>
-                                                    <i className="fa fa-star" aria-hidden="true"></i>
-                                                    <i className="fa fa-star" aria-hidden="true"></i>
-                                                    <i className="fa fa-star" aria-hidden="true"></i>
-                                                </div>
-                                            </div>
-                                        </div> 
-
-                                        <h1>This places was awesome, the service excellent and the pizza even better. Wow, I couldn't belive the prices was awesome!</h1>
-                                    </div>
-
-                                </div>
-                            </div>
-                        
                         </div>
+                        <hr className="hr"/>
+
+                        <div className="flex-container">
+                            <div className="review-1 flex-container">
+                                <div className="details__title">
+                                    <img src={image2} alt="details" className="reviewers__img"/>
+                                </div>
+                                <div>
+                                    <p className="date">5 months ago</p>
+                                    <p className="authorReview">Luis Carbajal</p>
+                                </div>
+                            </div>
+
+                            
+                            <div className="review-2 flex-container">
+                                <div>
+                                    <div className="authorRating">
+                                        <div className="details__rating__back">
+                                            <i className="fa fa-star" aria-hidden="true"></i>
+                                            <i className="fa fa-star" aria-hidden="true"></i>
+                                            <i className="fa fa-star" aria-hidden="true"></i>
+                                            <i className="fa fa-star" aria-hidden="true"></i>
+                                            <i className="fa fa-star" aria-hidden="true"></i>
+                                            
+                                            <div className="details__rating__front" style={{width: "70%" }}>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                    </div> 
+
+                                    <div className="comment">
+                                        <p>Must take course for anyone who has no prior programming language experience / is a beginner in python. Very informative and comprehensive course. Easy to understand.</p>
+                                    </div>
+
+                                    <div className="helpful flex-container">
+                                        <div className="date">
+                                            <p>Was this review helpful?</p>
+                                        </div>
+
+                                        <button className="btn-info-helpful">{} (0) Yes</button>
+                                
+                                        <button className="btn-info-helpful">{} (0) No</button>
+
+                                        <div className="date">
+                                            <p>Report</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <hr className="hr"/>
+                        
+                        <div className="flex-container">
+                            <div className="review-1 flex-container">
+                                <div className="details__title">
+                                    <img src={image2} alt="details" className="reviewers__img"/>
+                                </div>
+                                <div>
+                                    <p className="date">5 months ago</p>
+                                    <p className="authorReview">Luis Carbajal</p>
+                                </div>
+                            </div>
+
+                            
+                            <div className="review-2 flex-container">
+                                <div>
+                                    <div className="authorRating">
+                                        <div className="details__rating__back">
+                                            <i className="fa fa-star" aria-hidden="true"></i>
+                                            <i className="fa fa-star" aria-hidden="true"></i>
+                                            <i className="fa fa-star" aria-hidden="true"></i>
+                                            <i className="fa fa-star" aria-hidden="true"></i>
+                                            <i className="fa fa-star" aria-hidden="true"></i>
+                                            
+                                            <div className="details__rating__front" style={{width: "70%" }}>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                    </div> 
+
+                                    <div className="comment">
+                                        <p>Must take course for anyone who has no prior programming language experience / is a beginner in python. Very informative and comprehensive course. Easy to understand.</p>
+                                    </div>
+
+                                    <div className="helpful flex-container">
+                                        <div className="date">
+                                            <p>Was this review helpful?</p>
+                                        </div>
+
+                                        <button className="btn-info-helpful">{} (0) Yes</button>
+                                
+                                        <button className="btn-info-helpful">{} (0) No</button>
+
+                                        <div className="date">
+                                            <p>Report</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <hr className="hr"/>
+
+                        {/* MORE REVIEWS */}
+                        <div className="flex-container-img">
+                            <button className="btn-info-moreReviews">See more reviews</button>
+                        </div>
+                        
+                        
 
                     </div>
             
