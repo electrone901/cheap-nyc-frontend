@@ -94,8 +94,8 @@ class ItemsListPrice extends Component {
                             <div className="content" key={key}> 
 
                                 <div className="content__item-1">
-                                    <Link to="/productDetails">
-                                        <img src={image2} alt="item details" className="content__item-1__img"/>
+                                    <Link to={`/productDetails/${item}`}>
+                                    <img src={image2} alt="item details" className="content__item-1__img"/>
                                     </Link>
                                 </div>
 

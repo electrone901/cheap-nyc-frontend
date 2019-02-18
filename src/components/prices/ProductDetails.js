@@ -46,53 +46,58 @@ class ProductDetails extends Component {
 
                 <div className="details__item-1">
 
-                    <div className="flex-container-img">
-                        <div className="flex-img">
-                            <Link to="/productDetails">
-                                <img src={image2} alt="details" className="details__item-1__img"/>
-                            </Link>
-                        </div>
-                    </div>
 
-
-                    <div className="details__description">
-                        <div className="flex-container-img">
+                <div className="flex-container-img">
                             <div className="details__title">
-                                {this.state.data.productName}  <span className="detail__price"> $ 0.00</span>
+                                <h1>{this.state.data.productName}  <span className="detail__price"> $ 0.00</span></h1>                                
                             </div>
 
-                            <div className="details__rating">
-                                <div className="details__rating__back">
-                                    <i className="fa fa-star" aria-hidden="true"></i>
-                                    <i className="fa fa-star" aria-hidden="true"></i>
-                                    <i className="fa fa-star" aria-hidden="true"></i>
-                                    <i className="fa fa-star" aria-hidden="true"></i>
-                                    <i className="fa fa-star" aria-hidden="true"></i>
-                                    
-                                    <div className="details__rating__front" style={{width: "70%" }}>
-                                        <i className="fa fa-star" aria-hidden="true"></i>
-                                        <i className="fa fa-star" aria-hidden="true"></i>
-                                        <i className="fa fa-star" aria-hidden="true"></i>
-                                        <i className="fa fa-star" aria-hidden="true"></i>
-                                        <i className="fa fa-star" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </div> 
-
+                            
                             <div>
                                 <Link to="/productDetails" className="details__directions">Get Directions</Link>
                             </div>
+                        </div>
+
+
+
+                    <div className="flex-container-img">
+                        <div className="flex-img">
+                            <img src={image2} alt="details" className="details__item-1__img"/>
+                        </div>
+                    </div>
+
+                    
+
+                    <div className="details__description">
+                        
+
+                        <div className="flex-container-2 bottom-padding">
+                            <div>
+                                <button className="btn-info-like">{} (0) Likes</button>
+                            </div>
+                            <div>
+                                <button className="btn-info-like"><i className="fa fa-facebook-square fa"></i> Share</button>
+                                
+                            </div>
+                            <div>
+                                <button className="btn-info-like">{} (0) Flag This Post</button>
+                            </div>
+
                         </div>
 
                         <div className="details__info">
                             <h1>Company Name:  <span className="details__price"> {this.state.data.placeName}</span></h1>
                             <h1>Product Description:  <span className="details__price"> {this.state.data.description}</span></h1>
 
-                            <h1>Location:  <span className="details__price"> 300 Broadway Ave 34 B New York, NY 10027</span></h1><br/><br/>
+                            <h1>Location:  <span className="details__price"> 300 Broadway Ave 34 B New York, NY 10027</span></h1>
+                        
                         </div>
 
+
+                        
+
                         {/* LIKE, SHARE, DISLIKE */}
-                        <div className="flex-container-2 bottom-padding">
+                        {/* <div className="flex-container-2 bottom-padding">
                             <div>
                                 <button className="btn-info-like">{} (0) Likes</button>
                             </div>
@@ -107,7 +112,7 @@ class ProductDetails extends Component {
                         
                         <br/>
                         <br/>
-                        <br/>
+                        <br/> */}
 
                         {/* REVIEW TITLE */}
                         <div className="flex-container-2">
@@ -116,7 +121,7 @@ class ProductDetails extends Component {
                             </div>
 
                             <div>
-                                <Link to="/productDetails" className="btn-info">+ Add Review</Link>
+                                <Link to="/addReview" className="btn-info">+ Add Review</Link>
                             </div>
                         </div>
                         <hr className="hr"/>

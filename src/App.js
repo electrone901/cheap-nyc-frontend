@@ -16,6 +16,7 @@ import Signup from './components/auth/Signup';
 import ItemsListPrice from './components/prices/ItemsListPrice';
 import CreatePost from './components/prices/CreatePost';
 import ProductDetails from './components/prices/ProductDetails';
+import AddReview from './components/reviews/AddReview';
 
 // importing redux
 import { Provider } from 'react-redux';
@@ -34,6 +35,7 @@ class App extends Component {
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/itemsListPrice/:range" component={ItemsListPrice} />
             <Route exact path="/productDetails/:item" component={ProductDetails} />
+            <Route exact path="/addReview" component={AddReview} />
             <Footer />
           </div>
         </Router>

@@ -12,11 +12,12 @@ const TextSlider = () => {
     return (
         <div className="tParent" id="tParent">
             <div className="tParent__items">
-                <h1 className="">What do you love?</h1>
+                {/* <h1 className="">What do you love?</h1> */}
+                <h1 className="">Find best NY hacks</h1>
             </div>
             <div className="tParent__items">
                 <p className="tParent__items__subTittle">
-                    Do more of it with Cheap NY
+                    Do more with less
                 </p>
             </div>
             <div className="tParent__items">
